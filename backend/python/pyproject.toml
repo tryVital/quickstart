@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "quickstart"
+version = "0.1.0"
+description = ""
+authors = ["Maitham <maithamdib@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+vital = "^1.1.22"
+fastapi = "^0.77.1"
+uvicorn = "^0.17.6"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
