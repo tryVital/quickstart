@@ -80,7 +80,7 @@ export const ActivityPanel = ({ userId }) => {
   const [endDate, setEndDate] = useState(moment().toISOString());
 
   const { data: activity = [], error: errorSleep } = useSWR(
-    userId ? ["activity", userId, startDate, endDate] : null,
+    userId ? ["activity", userId, startDate, endDate, "activity"] : null,
     fetchSummaryData
   );
 

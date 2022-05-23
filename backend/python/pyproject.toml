@@ -9,6 +9,7 @@ python = "^3.9"
 vital = "^1.1.22"
 fastapi = "^0.77.1"
 uvicorn = "^0.17.6"
+python-dotenv = "^0.20.0"
 
 [tool.poetry.dev-dependencies]
 

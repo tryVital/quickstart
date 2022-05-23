@@ -7,14 +7,18 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = FastAPI()
+VITAL_API_KEY = os.getenv("VITAL_API_KEY")
+VITAL_ENVIRONMENT = os.getenv("VITAL_ENV")
 
-client = Client(api_key=os.getenv("VITAL_API_KEY", key), environment="sandbox")
+client = Client(api_key=VITAL_API_KEY, environment=VITAL_ENVIRONMENT)
 
 app.add_middleware(  # type: ignore
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

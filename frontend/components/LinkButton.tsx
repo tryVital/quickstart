@@ -9,7 +9,6 @@ const API_URL = "http://localhost:8000";
 const getTokenFromBackend = async (userID: string) => {
   const resp = await fetch(`${API_URL}/token/${userID}`);
   const data = await resp.json();
-  console.log("DATA", data);
   return data;
 };
 

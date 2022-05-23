@@ -78,9 +78,9 @@ const SleepDayCard: React.FunctionComponent<{ latestSleep: Sleep }> = ({
             color={null}
           />
           <InfoBar
-            barValue={latestSleep?.efficiency * 100}
+            barValue={latestSleep?.efficiency}
             label={"EFFICIENCY"}
-            value1={latestSleep?.efficiency * 100}
+            value1={latestSleep?.efficiency}
             suffix1={"%"}
             value2={null}
             suffix2={null}
@@ -111,7 +111,6 @@ export const SleepPanel = ({ userId }) => {
     userId ? ["sleep", userId, startDate, endDate, "sleep"] : null,
     fetchSummaryData
   );
-  console.log({ sleeps });
 
   const handleDateChange = (period: "1w" | "1m") => {
     switch (period) {
