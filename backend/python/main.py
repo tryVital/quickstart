@@ -13,8 +13,9 @@ load_dotenv()
 app = FastAPI()
 VITAL_API_KEY = os.getenv("VITAL_API_KEY")
 VITAL_ENVIRONMENT = os.getenv("VITAL_ENV")
+VITAL_REGION = os.getenv("VITAL_REGION")
 
-client = Client(api_key=VITAL_API_KEY, environment=VITAL_ENVIRONMENT)
+client = Client(api_key=VITAL_API_KEY, environment=VITAL_ENVIRONMENT, region=os.getenv("VITAL_REGION"))
 
 app.add_middleware(  # type: ignore
     CORSMiddleware,

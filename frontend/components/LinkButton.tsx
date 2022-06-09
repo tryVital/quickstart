@@ -1,5 +1,4 @@
-import type { NextPage } from "next";
-import { VStack, Heading, Button } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { useState, useCallback } from "react";
 import { useVitalLink } from "@tryvital/vital-link";
 
