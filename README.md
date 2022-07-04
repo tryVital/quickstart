@@ -8,11 +8,11 @@ To run the backend.
 # Note: If on Windows, run
 # git clone -c core.symlinks=true https://github.com/vital/quickstart
 # instead to ensure correct symlink behavior
-git clone https://github.com/plaid/quickstart.git
+git clone https://github.com/tryvital/quickstart.git
 cd backend/python
 
 # Copy the .env.example file to .env, then fill
-# out PLAID_CLIENT_ID and PLAID_SECRET in .env
+# out VITAL_CLIENT_ID and VITAL_SECRET in .env
 cp .env.example .env
 
 # Note: must use python 3
