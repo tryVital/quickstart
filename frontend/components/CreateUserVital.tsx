@@ -14,7 +14,7 @@ import { Client } from "../lib/client";
 import { LinkButton } from "./LinkButton";
 
 const CreateUser = ({ onCreate }) => {
-  const [clientUserId, setClientUserId] = useState(null);
+  const [clientUserId, setClientUserId] = useState("");
   const [isLoading, setLoading] = useState(false);
 
   const handleClick = async () => {
@@ -25,7 +25,7 @@ const CreateUser = ({ onCreate }) => {
       try {
         const data = await client.createUser(clientUserId);
         onCreate(data.user_id);
-        setClientUserId(null);
+        setClientUserId("");
         setLoading(false);
       } catch (e) {
         console.log("Failed to create");
