@@ -146,7 +146,7 @@ export const SleepPanel = ({ userId }) => {
       </HStack>
       <HStack sx={{ width: "100%" }}>
         <Box width={"600px"} height={"400px"}>
-          <SleepGraph data={sleeps} />
+          <SleepGraph data={sleeps ? sleeps : []} />
         </Box>
       </HStack>
     </VStack>

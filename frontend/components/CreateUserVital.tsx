@@ -82,7 +82,7 @@ export const CreateUserVital = ({ users, onCreate, onSelect }) => {
           .slice(0, 5)
           .map((el) => {
             return (
-              <VStack width={"100%"} alignItems={"flex-start"}>
+              <VStack width={"100%"} alignItems={"flex-start"} key={el.user_id}>
                 <HStack
                   alignItems={"center"}
                   width={"100%"}
@@ -96,10 +96,11 @@ export const CreateUserVital = ({ users, onCreate, onSelect }) => {
                     <HStack justifyContent={"flex-end"}>
                       {el.connected_sources.map((el) => (
                         <Image
+                          key={el.source?.id}
                           width={"20px"}
                           height={"20px"}
                           borderRadius={"100px"}
-                          src={el.source.logo}
+                          src={el.source?.logo}
                         />
                       ))}
                     </HStack>

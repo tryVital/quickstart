@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "moment": "^2.29.3",
-    "recharts": "^2.1.9"
-  }
-}

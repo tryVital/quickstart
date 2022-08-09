@@ -1,0 +1,1 @@
+cp .env ./backend/python/ && cat .env | sed -e s/VITAL_/NEXT_PUBLIC_VITAL_/g > ./frontend/.env.local

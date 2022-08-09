@@ -12,6 +12,8 @@ const Home: NextPage = () => {
   const [userID, setUserID] = useState(null);
   const { data: users } = useSWR("/users/", fetcher);
 
+  const usersFiltered = users ? (users?.length > 0 ? users : []) : [];
+
   return (
     <VStack
       my={10}
@@ -27,7 +29,7 @@ const Home: NextPage = () => {
       <VStack width={"100%"} alignItems={"flex-start"}>
         <Box width={"100%"}>
           <CreateUserVital
-            users={users ? users : []}
+            users={usersFiltered}
             onCreate={setUserID}
             onSelect={setUserID}
           />
@@ -41,10 +43,10 @@ const Home: NextPage = () => {
             </Text>
             <HStack width={"100%"} spacing={10} alignItems={"flex-start"}>
               <Box width={"50%"}>
-                <SleepPanel userId={users ? users[0].user_id : null} />
+                <SleepPanel userId={userID} />
               </Box>
               <Box width={"50%"}>
-                <ActivityPanel userId={users ? users[0].user_id : null} />
+                <ActivityPanel userId={userID} />
               </Box>
             </HStack>
           </Card>

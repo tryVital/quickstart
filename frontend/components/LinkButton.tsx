@@ -33,8 +33,8 @@ export const LinkButton: React.FC<{ userID: string | null }> = ({ userID }) => {
     onSuccess,
     onExit,
     onError,
-    env: "sandbox",
-    region: "us",
+    env: process.env.NEXT_PUBLIC_VITAL_ENV,
+    region: process.env.NEXT_PUBLIC_VITAL_REGION,
   };
 
   const { open, ready, error } = useVitalLink(config);

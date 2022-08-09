@@ -15,6 +15,14 @@ cd backend/python
 # out VITAL_CLIENT_ID and VITAL_SECRET in .env
 cp .env.example .env
 
+# Fill all the env variables in the .env file
+VITAL_API_KEY=..
+VITAL_ENV=sandbox
+VITAL_REGION=us
+
+# Run fixenv.sh
+./fixenv.sh
+
 # Note: must use python 3
 # For virtualenv users:
 # virtualenv venv
@@ -22,7 +30,7 @@ cp .env.example .env
 poetry install
 
 # Start the backend app
-source ./start.sh
+./run_backend.sh
 ```
 
 To run the frontend
@@ -33,7 +41,7 @@ cd quickstart/frontend
 npm install
 
 # Start the frontend app
-npm dev
+./run_startend.sh
 
 # Go to http://localhost:3000
 ```

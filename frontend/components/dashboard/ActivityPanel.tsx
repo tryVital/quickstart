@@ -10,30 +10,52 @@ import { useState } from "react";
 import useSWR from "swr";
 import { RadioButtons } from "./customRadio";
 
+const defaultActvity = {
+  calories_active: 0,
+  calories_total: 0,
+  daily_movement: 0,
+  date: new Date().toISOString(),
+  high: 0,
+  id: "123131",
+  low: 0,
+  medium: 0,
+  priority: 0,
+  source: {
+    name: "Not loaded",
+    logo: null,
+  },
+  steps: 0,
+  user_id: "",
+};
+
 const ActivityCard: React.FunctionComponent<{ latestActivity: Activity }> = ({
   latestActivity,
 }) => {
-  const high = parseMins(latestActivity?.high);
-  const medium = parseMins(latestActivity?.medium);
-  const low = parseMins(latestActivity?.low);
+  const latestActivitydefault = latestActivity
+    ? latestActivity
+    : defaultActvity;
+
+  const high = parseMins(latestActivitydefault?.high);
+  const medium = parseMins(latestActivitydefault?.medium);
+  const low = parseMins(latestActivitydefault?.low);
 
   return (
     <VStack sx={{ width: "100%" }} alignItems={"flex-end"} p={5}>
       <Heading fontWeight={600} fontSize={12} color={"gray"}>
-        {moment(latestActivity?.date).format("Do ddd MMM")}
+        {moment(latestActivitydefault?.date).format("Do ddd MMM")}
       </Heading>
       <HStack sx={{ width: "100%", py: 15 }}>
         <VStack sx={{ width: "50%" }}>
           <InfoText
             label={"ACTIVE CALORIES"}
-            value1={Math.round(latestActivity?.calories_active)}
+            value1={Math.round(latestActivitydefault?.calories_active)}
             suffix1={"kCal"}
             value2={null}
             suffix2={null}
           />
           <InfoText
             label={"TOTAL CALORIES"}
-            value1={Math.round(latestActivity?.calories_total)}
+            value1={Math.round(latestActivitydefault?.calories_total)}
             suffix1={"kCal"}
             value2={null}
             suffix2={null}
@@ -41,7 +63,7 @@ const ActivityCard: React.FunctionComponent<{ latestActivity: Activity }> = ({
         </VStack>
         <VStack sx={{ width: "50%" }}>
           <InfoBar
-            barValue={latestActivity?.high / (0.6 * 0.5)}
+            barValue={latestActivitydefault?.high / (0.6 * 0.5)}
             label={"HIGH"}
             value1={high.hours}
             suffix1={"h"}
@@ -50,7 +72,7 @@ const ActivityCard: React.FunctionComponent<{ latestActivity: Activity }> = ({
             color={"rgba(153, 192, 74,1)"}
           />
           <InfoBar
-            barValue={latestActivity?.medium / (36 * 0.5)}
+            barValue={latestActivitydefault?.medium / (36 * 0.5)}
             label={"MEDIUM"}
             value1={medium.hours}
             suffix1={"h"}
@@ -59,7 +81,7 @@ const ActivityCard: React.FunctionComponent<{ latestActivity: Activity }> = ({
             color={"rgba(153, 192, 74,1)"}
           />
           <InfoBar
-            barValue={latestActivity?.low / (36 * 0.5)}
+            barValue={latestActivitydefault?.low / (36 * 0.5)}
             label={"LOW"}
             value1={low.hours}
             suffix1={"h"}
