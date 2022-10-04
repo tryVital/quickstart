@@ -10,9 +10,9 @@ import { ActivityPanel } from "../components/dashboard/ActivityPanel";
 
 const Home: NextPage = () => {
   const [userID, setUserID] = useState(null);
-  const { data: users } = useSWR("/users/", fetcher);
+  const { data } = useSWR("/users/", fetcher);
 
-  const usersFiltered = users ? (users?.length > 0 ? users : []) : [];
+  const usersFiltered = data?.users ? (data.total > 0 ? data.users : []) : [];
 
   return (
     <VStack
