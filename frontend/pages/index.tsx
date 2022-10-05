@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const [userID, setUserID] = useState(null);
   const { data } = useSWR("/users/", fetcher);
 
-  const usersFiltered = data?.users ? (data.total > 0 ? data.users : []) : [];
+  const usersFiltered = data?.users ? data.users : [];
 
   return (
     <VStack
