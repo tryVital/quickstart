@@ -41,7 +41,7 @@ cd quickstart/frontend
 npm install
 
 # Start the frontend app
-./run_startend.sh
+npm run dev
 
 # Go to http://localhost:3000
 ```
