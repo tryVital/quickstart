@@ -53,7 +53,7 @@ export const ActivityGraph: React.FunctionComponent<{ data: Activity[] }> = ({
           labelStyle={{ fontSize: 12, color: "gray" }}
           itemStyle={{ color: "rgba(153, 192, 74,1)" }}
           contentStyle={{ borderRadius: 10 }}
-          formatter={(value, name, props) => {
+          formatter={(value:any, name:any, props:any) => {
             const time = parseMins(value);
             return `${time.hours ? time.hours : 0}h ${
               time.minutes ? time.minutes : 0

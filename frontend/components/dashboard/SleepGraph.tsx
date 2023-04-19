@@ -57,7 +57,7 @@ export const SleepGraph: React.FunctionComponent<{ data: Sleep[] }> = ({
           labelFormatter={(x, value) => moment.unix(x).format("ddd MMM D")}
           labelStyle={{ fontSize: 12, color: "gray" }}
           contentStyle={{ borderRadius: 10 }}
-          formatter={(value, name, props) => {
+          formatter={(value:any, name:any, props:any) => {
             const time = parseSecs(value);
             return `${time.hours}h ${time.minutes}min`;
           }}

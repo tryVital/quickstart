@@ -78,7 +78,7 @@ const WorkoutCard: React.FunctionComponent<{ workout: Workout }> = ({
   );
 };
 
-export const WorkoutPanel = ({ workouts }) => {
+export const WorkoutPanel = ({ workouts }:any) => {
   ({ workouts });
   const workoutsSorted = _.orderBy(
     workouts,

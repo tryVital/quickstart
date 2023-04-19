@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Heading, HStack, VStack } from "@chakra-ui/react";
 import { Card } from "./Card";
 import {
   Text,
@@ -9,11 +9,10 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import useSWR from "swr";
 import { Client } from "../lib/client";
 import { LinkButton } from "./LinkButton";
 
-const CreateUser = ({ onCreate }) => {
+const CreateUser = ({ onCreate }: { onCreate: any }) => {
   const [clientUserId, setClientUserId] = useState("");
   const [isLoading, setLoading] = useState(false);
 
@@ -56,7 +55,15 @@ const CreateUser = ({ onCreate }) => {
   );
 };
 
-export const CreateUserVital = ({ users, onCreate, onSelect }) => {
+export const CreateUserVital = ({
+  users,
+  onCreate,
+  onSelect,
+}: {
+  users: any;
+  onCreate: any;
+  onSelect: any;
+}) => {
   return (
     <Card>
       <Heading size={"md"}>1. Create a Vital user</Heading>
@@ -71,7 +78,7 @@ export const CreateUserVital = ({ users, onCreate, onSelect }) => {
       </Heading>
       <VStack width={"100%"} spacing={5}>
         {users
-          .sort((a, b) => {
+          .sort((a: any, b: any) => {
             return a.created_on < b.created_on
               ? -1
               : a.created_on > b.created_on
@@ -80,7 +87,7 @@ export const CreateUserVital = ({ users, onCreate, onSelect }) => {
           })
           .reverse()
           .slice(0, 5)
-          .map((el) => {
+          .map((el: any) => {
             return (
               <VStack width={"100%"} alignItems={"flex-start"} key={el.user_id}>
                 <HStack
@@ -94,7 +101,7 @@ export const CreateUserVital = ({ users, onCreate, onSelect }) => {
                       {el.client_user_id}
                     </Text>
                     <HStack justifyContent={"flex-end"}>
-                      {el.connected_sources.map((el) => (
+                      {el.connected_sources.map((el: any) => (
                         <Image
                           key={el.source?.id}
                           width={"20px"}

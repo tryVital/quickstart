@@ -1,6 +1,6 @@
 import { VStack, Box, HStack, Text, Progress } from "@chakra-ui/react";
 
-export const InfoIcon = ({ icon, label, value }) => {
+export const InfoIcon = ({ icon, label, value }:any) => {
   return (
     <VStack spacing={0} pl={5} pr={"10px"} py={"10px"}>
       {icon}
@@ -12,7 +12,7 @@ export const InfoIcon = ({ icon, label, value }) => {
   );
 };
 
-export const InfoText = ({ label, value1, value2, suffix1, suffix2 }) => {
+export const InfoText = ({ label, value1, value2, suffix1, suffix2 } :any) => {
   return (
     <VStack spacing={0} pl={5} pr={"10px"} py={"10px"}>
       <HStack spacing={0}>
@@ -41,7 +41,7 @@ export const InfoBar = ({
   suffix1,
   suffix2,
   color,
-}) => {
+}:any) => {
   return (
     <HStack sx={{ width: "100%" }}>
       <Box width={"20%"}>
@@ -60,7 +60,7 @@ export const InfoBar = ({
         <Progress
           value={barValue}
           color={"black"}
-          colorScheme={color ? "green" : null}
+          colorScheme={color ? "green" : 'inherit'}
           size="md"
           width={"100%"}
         />

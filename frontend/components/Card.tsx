@@ -1,6 +1,6 @@
 import { VStack } from "@chakra-ui/react";
 
-export const Card = ({ children }) => {
+export const Card = ({ children }: { children: any }) => {
   return (
     <VStack
       border={"1px solid #e3ebf6"}

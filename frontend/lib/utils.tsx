@@ -2,7 +2,7 @@ import { Workout } from "../models";
 import _ from "lodash";
 import moment from "moment";
 
-export const roundNum = (num) => Math.round((num + Number.EPSILON) * 100) / 100;
+export const roundNum = (num:any) => Math.round((num + Number.EPSILON) * 100) / 100;
 
 export const getDiffInMinutes = (workouts: Workout[]) => {
   return Math.round(
@@ -13,7 +13,7 @@ export const getDiffInMinutes = (workouts: Workout[]) => {
   );
 };
 
-export const getDiffInMins = (start, end) => {
+export const getDiffInMins = (start:any, end:any) => {
   const diff = moment(end).diff(moment(start));
   return Math.round(moment.duration(diff).asMinutes());
 };
@@ -41,7 +41,7 @@ export const parseHrZoneData = (workouts: Workout[]) => [
   },
 ];
 
-export const parseSecs = (num) => {
+export const parseSecs = (num:any) => {
   if (!num) return { hours: 0, mins: 0 };
   const time = num / 3600;
   const mins = time - Math.floor(time);
@@ -51,7 +51,7 @@ export const parseSecs = (num) => {
   };
 };
 
-export const parseMins = (num) => {
+export const parseMins = (num:any) => {
   if (!num) return { hours: 0, mins: 0 };
   const time = num / 60;
   const mins = time - Math.floor(time);

@@ -24,7 +24,7 @@ export const HorizontalBarChart: React.FunctionComponent<
       <BarChart width={150} height={200} data={data} layout={"vertical"}>
         {/* <Bar dataKey="value" fill="#8884d8" /> */}
         <Bar dataKey="value" fill="#8884d8">
-          {data.map((entry, index) => {
+          {data.map((entry: any, index: any) => {
             return <Cell key={index} fill={COLORS[index]} />;
           })}
         </Bar>
@@ -37,7 +37,7 @@ export const HorizontalBarChart: React.FunctionComponent<
           itemStyle={{ color: "black", fontSize: 12 }}
           active={true}
           offset={30}
-          formatter={(value, name, props) => [`${value} min`]}
+          formatter={(value: any, name: any, props: any) => [`${value} min`]}
           labelFormatter={(x) => ""}
         />
         <XAxis

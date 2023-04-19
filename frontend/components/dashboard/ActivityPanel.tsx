@@ -95,7 +95,7 @@ const ActivityCard: React.FunctionComponent<{ latestActivity: Activity }> = ({
   );
 };
 
-export const ActivityPanel = ({ userId }) => {
+export const ActivityPanel = ({ userId }: { userId: any }) => {
   const [startDate, setStartDate] = useState(
     moment().subtract(7, "days").toISOString()
   );

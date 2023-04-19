@@ -101,7 +101,7 @@ const SleepDayCard: React.FunctionComponent<{ latestSleep: Sleep }> = ({
   );
 };
 
-export const SleepPanel = ({ userId }) => {
+export const SleepPanel = ({ userId }:any) => {
   const [startDate, setStartDate] = useState(
     moment().subtract(7, "days").toISOString()
   );

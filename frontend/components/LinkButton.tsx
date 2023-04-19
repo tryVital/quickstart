@@ -14,17 +14,17 @@ const getTokenFromBackend = async (userID: string) => {
 export const LinkButton: React.FC<{ userID: string | null }> = ({ userID }) => {
   const [isLoading, setLoading] = useState(false);
 
-  const onSuccess = useCallback((metadata) => {
+  const onSuccess = useCallback((metadata: any) => {
     // Device is now connected.
     console.log("onSuccess", metadata);
   }, []);
 
-  const onExit = useCallback((metadata) => {
+  const onExit = useCallback((metadata: any) => {
     // User has quit the link flow.
     console.log("onExit", metadata);
   }, []);
 
-  const onError = useCallback((metadata) => {
+  const onError = useCallback((metadata: any) => {
     // Error encountered in connecting device.
     console.log("onError", metadata);
   }, []);
@@ -33,15 +33,15 @@ export const LinkButton: React.FC<{ userID: string | null }> = ({ userID }) => {
     onSuccess,
     onExit,
     onError,
-    env: process.env.NEXT_PUBLIC_VITAL_ENV,
-    region: process.env.NEXT_PUBLIC_VITAL_REGION,
+    env: process.env.NEXT_PUBLIC_VITAL_ENV as string,
+    region: process.env.NEXT_PUBLIC_VITAL_REGION as string,
   };
 
   const { open, ready, error } = useVitalLink(config);
 
   const handleVitalOpen = async () => {
     setLoading(true);
-    const token = await getTokenFromBackend(userID);
+    const token = await getTokenFromBackend(userID as string);
     open(token.link_token);
     setLoading(false);
   };

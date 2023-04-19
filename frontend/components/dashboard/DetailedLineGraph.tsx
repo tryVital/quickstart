@@ -30,7 +30,7 @@ export const DetailedLineGraph: React.FunctionComponent<LineProps> = ({
   data,
 }) => {
   const maxValue = _.maxBy(data, (x) => x.value);
-  const max = Math.ceil(maxValue.value / 25) * 25;
+  const max = Math.ceil(maxValue?.value || 0 / 25) * 25;
 
   const shouldRotate = data.length > 2000;
   return (
@@ -73,7 +73,7 @@ export const DetailedLineGraph: React.FunctionComponent<LineProps> = ({
           labelFormatter={(x, value) => moment.unix(x).format("HH:mm A")}
           labelStyle={{ fontSize: 12, color: "gray" }}
           contentStyle={{ borderRadius: 10 }}
-          formatter={(value, name, props) => {
+          formatter={(value: any, name: any, props: any) => {
             if (name === "value") {
               return [
                 <HStack>

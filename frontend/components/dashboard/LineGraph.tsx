@@ -67,7 +67,7 @@ export const LineGraph: React.FunctionComponent<LineGraphProps> = ({
         />
         <Tooltip
           labelFormatter={(x, value) => moment.unix(x).format("ddd Do YYYY")}
-          formatter={(value, name, props) => {
+          formatter={(value: any, name: any, props: any) => {
             if (name === "sleep_total") {
               const v = Math.round((value / 3600) * 100) / 100;
               var decimal = v - Math.floor(v);

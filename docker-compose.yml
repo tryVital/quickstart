@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  backend-python:
+    build: ./backend/python
+    ports:
+      - "8000:8000"
+  frontend:
+    build: "./frontend"
+    ports:
+      - "3001:3000"
