@@ -1,4 +1,4 @@
-import { VStack, Box, HStack, Heading } from "@chakra-ui/react";
+import { VStack, Box, HStack, Heading, useColorMode } from "@chakra-ui/react";
 import { SleepGraph } from "./SleepGraph";
 import moment from "moment";
 import { parseSecs } from "../../lib/utils";
@@ -125,16 +125,23 @@ export const SleepPanel = ({ userId }:any) => {
     }
   };
   const sleepsSorted = _.orderBy(sleeps, (x) => moment(x.date).unix(), "desc");
+  const { colorMode } = useColorMode();
+  const borderColor = {
+    light: "white",
+    dark: "white", 
+  };
+  
   return (
     <VStack
       p="6"
       h="xl"
-      bg="white"
       shadow="base"
       rounded="lg"
       height="100%"
       my={10}
-      alignItems={"flex-start"}
+      alignItems="flex-start"
+      border="1px"
+      borderColor={borderColor[colorMode]}
     >
       {sleeps && <SleepDayCard latestSleep={sleepsSorted[0]} />}
       <HStack width={"100%"} justifyContent={"flex-end"}>

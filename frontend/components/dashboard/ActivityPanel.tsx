@@ -1,4 +1,4 @@
-import { VStack, Box, HStack, Heading } from "@chakra-ui/react";
+import { VStack, Box, HStack, Heading, useColorMode } from "@chakra-ui/react";
 import { ActivityGraph } from "./ActivityGraph";
 import moment from "moment";
 import { parseMins } from "../../lib/utils";
@@ -123,16 +123,25 @@ export const ActivityPanel = ({ userId }: { userId: any }) => {
     (x) => moment(x.date).unix(),
     "desc"
   );
+
+  const { colorMode } = useColorMode();
+
+  const borderColor = {
+    light: "white",
+    dark: "white", 
+  };
+  
   return (
     <VStack
       p="6"
       h="xl"
-      bg="white"
       shadow="base"
       rounded="lg"
       height="100%"
       my={10}
-      alignItems={"flex-start"}
+      alignItems="flex-start"
+      border="1px"
+      borderColor={borderColor[colorMode]}
     >
       {activitySorted && <ActivityCard latestActivity={activitySorted[0]} />}
       <HStack width={"100%"} justifyContent={"flex-end"}>

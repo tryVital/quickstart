@@ -18,7 +18,6 @@ const Home: NextPage = () => {
     <VStack
       my={10}
       px={10}
-      backgroundColor={"#fcfdff"}
       height={"100vh"}
       spacing={10}
       alignItems={"flex-start"}
@@ -41,7 +40,7 @@ const Home: NextPage = () => {
               Request user data and plot activity, workout sleep and other
               health information.
             </Text>
-            <HStack width={"100%"} spacing={10} alignItems={"flex-start"}>
+            <HStack width={"100%"} spacing={4} alignItems={"flex-start"}>
               <Box width={"50%"}>
                 <SleepPanel userId={userID} />
               </Box>
