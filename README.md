@@ -64,5 +64,5 @@ npm run dev
 
 ### Step 3
 
-Head to localhost:3001 and begin interacting with the frontend 
+Head to localhost:3000 and begin interacting with the frontend 
 Head to localhost:8000 to begin interacting with the backend. 
