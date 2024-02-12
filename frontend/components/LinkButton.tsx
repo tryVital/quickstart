@@ -3,7 +3,7 @@ import { useState, useCallback } from "react";
 import { useVitalLink } from "@tryvital/vital-link";
 
 // URL for the mock backend which creates the vital link token
-const API_URL = "http://localhost:8000";
+const API_URL = "http://0.0.0.0:8000";
 
 const getTokenFromBackend = async (userID: string) => {
   const resp = await fetch(`${API_URL}/token/${userID}`);
