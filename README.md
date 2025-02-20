@@ -7,10 +7,10 @@ To get started with Vital quickstart, start with reading our [Docs](https://docs
 
 The first step is to obtain your credentials from the Vital Dashboard. 
 
-Once you have done this
+Once you have done this:
 
 ```
-# out VITAL_CLIENT_ID and VITAL_SECRET in .env
+# Copy the .env.example file:
 cp .env.example .env
 
 # Fill all the env variables in the .env file
@@ -43,13 +43,14 @@ cd backend/python
 # For virtualenv users:
 # virtualenv venv
 # source venv/bin/activate
-cd backend/python && poetry shell && poetry install
+poetry shell
+poetry install
 
-# Start the backend app
+# While still in the shell, start the backend app
 cd ../../ && ./run_backend.sh
 ```
 
-To run the frontend
+To run the frontend:
 
 ```
 # Install dependencies
