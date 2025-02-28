@@ -6,7 +6,7 @@ authors = ["Maitham <maithamdib@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-vital = "^1.1.22"
+vital = "^2.1.214"
 fastapi = "^0.77.1"
 uvicorn = "^0.17.6"
 python-dotenv = "^0.20.0"
