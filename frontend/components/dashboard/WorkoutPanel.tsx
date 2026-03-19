@@ -88,7 +88,7 @@ export const WorkoutPanel = ({ workouts }:any) => {
   return (
     <>
       {workoutsSorted.map((el) => (
-        <WorkoutCard workout={el} />
+        <WorkoutCard key={el.id || moment(el.time_start).unix()} workout={el} />
       ))}
 
       {workoutsSorted.length === 0 && (
@@ -104,7 +104,7 @@ export const WorkoutPanel = ({ workouts }:any) => {
         >
           <Box sx={{ height: "120px", mt: 30 }}>
             <Text sx={{ color: "gray", fontStyle: "italic" }}>
-              This user doesn't have any workouts.
+              This user doesn&apos;t have any workouts.
             </Text>
           </Box>
         </VStack>

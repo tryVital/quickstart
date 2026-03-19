@@ -73,7 +73,7 @@ export const LineGraph: React.FunctionComponent<LineGraphProps> = ({
               var decimal = v - Math.floor(v);
               var mins = Math.round(decimal * 60);
               return [
-                <HStack>
+                <HStack key="bed">
                   <IoBed />
                   <Text>
                     {Math.floor(v)}hr {mins}min
@@ -83,7 +83,7 @@ export const LineGraph: React.FunctionComponent<LineGraphProps> = ({
             }
             if (name === "average_hr") {
               return [
-                <HStack>
+                <HStack key="heart">
                   <AiFillHeart />
                   <Text>{value}</Text>
                 </HStack>,
@@ -91,7 +91,7 @@ export const LineGraph: React.FunctionComponent<LineGraphProps> = ({
             }
             if (name === "calories_active") {
               return [
-                <HStack>
+                <HStack key="running">
                   <FaRunning />
                   <Text>{value}</Text>
                 </HStack>,

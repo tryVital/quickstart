@@ -6,13 +6,13 @@ const URL_PREFIX = BACKEND_IS_PYTHON ? API_URL : "/api";
 export const fetcher = (url: string) =>
   fetch(`${URL_PREFIX}${url}`).then((res) => res.json());
 
-export const fetchSummaryData = (
-  data_type: string,
-  userID: string,
-  start_date: string,
-  end_date: string,
-  key: string
-) =>
+export const fetchSummaryData = ([
+  data_type,
+  userID,
+  start_date,
+  end_date,
+  key,
+]: [string, string, string, string, string]) =>
   fetch(
     `${URL_PREFIX}/summary/${data_type}/${userID}?start_date=${start_date}&end_date=${end_date}`
   )
