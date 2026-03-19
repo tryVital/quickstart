@@ -76,7 +76,7 @@ export const DetailedLineGraph: React.FunctionComponent<LineProps> = ({
           formatter={(value: any, name: any, props: any) => {
             if (name === "value") {
               return [
-                <HStack>
+                <HStack key="heart">
                   <AiFillHeart />
                   <Text>{value}</Text>
                 </HStack>,

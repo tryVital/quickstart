@@ -108,6 +108,7 @@ export const CreateUserVital = ({
                           height={"20px"}
                           borderRadius={"100px"}
                           src={el.source?.logo}
+                          alt=""
                         />
                       ))}
                     </HStack>

@@ -2,10 +2,10 @@
 import { Box, HStack, useRadio, useRadioGroup } from "@chakra-ui/react";
 
 export const RadioCard = (props) => {
-  const { getInputProps, getCheckboxProps } = useRadio(props);
+  const { getInputProps, getRadioProps } = useRadio(props);
 
   const input = getInputProps();
-  const checkbox = getCheckboxProps();
+  const checkbox = getRadioProps();
 
   return (
     <Box as="label">
@@ -35,10 +35,10 @@ export const RadioCard = (props) => {
 };
 
 export const RadioCardSquare = (props) => {
-  const { getInputProps, getCheckboxProps } = useRadio(props);
+  const { getInputProps, getRadioProps } = useRadio(props);
 
   const input = getInputProps();
-  const checkbox = getCheckboxProps();
+  const checkbox = getRadioProps();
 
   return (
     <Box as="label">
