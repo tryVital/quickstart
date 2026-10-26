@@ -10,7 +10,7 @@ vital = "^1.1.22"
 fastapi = "^0.162.0"
 uvicorn = "^0.17.6"
 h11 = ">=0.16.0"
-python-dotenv = "^0.20.0"
+python-dotenv = "^1.2.4"
 
 [tool.poetry.dev-dependencies]
 
