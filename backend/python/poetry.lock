@@ -662,14 +662,14 @@ six = ">=1.5"
 
 [[package]]
 name = "python-dotenv"
-version = "0.20.0"
+version = "1.2.4"
 description = "Read key-value pairs from a .env file and set them as environment variables"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "python-dotenv-0.20.0.tar.gz", hash = "sha256:b7e3b04a59693c42c36f9ab1cc2acc46fa5df8c78e178fc33a8d4cd05c8d498f"},
-    {file = "python_dotenv-0.20.0-py3-none-any.whl", hash = "sha256:d92a187be61fe482e4fd675b6d52200e7be63a12b724abbf931a40ce4fa92938"},
+    {file = "python_dotenv-1.2.4-py3-none-any.whl", hash = "sha256:42269a8a5b3fd54ffa6f3d84b18abed50064717576b4ecf03dc4a55d8aa04fdc"},
+    {file = "python_dotenv-1.2.4.tar.gz", hash = "sha256:f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0"},
 ]
 
 [package.extras]
@@ -847,4 +847,4 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "eeb06a8d5d9c733e9fe29440d3d134cce9ee5dbc505020492c07702d259a97be"
+content-hash = "3dcb19000b8d054fe4ba28072bfa5e6824fe7423251d53b99615dba84a3e02df"
